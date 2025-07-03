@@ -5,8 +5,8 @@ import requests
 
 app = Flask(__name__)
 
-WATSON_API_KEY = "2uK-gC5ixi83Ye4i3wHSLvL7QkpOYanac1nNbReuN6MC"
-WATSON_API_URL = "https://us-south.ml.cloud.ibm.com"
+WATSON_API_KEY = os.environ.get("WATSON_API_KEY")
+WATSON_API_URL = os.environ.get("WATSON_API_URL")
 
 def extract_text_from_pdf(pdf_file):
     doc = fitz.open(stream=pdf_file.read(), filetype="pdf")
@@ -16,7 +16,7 @@ def extract_text_from_pdf(pdf_file):
     return text
 
 def classify_resume_with_ibm(text):
-    prompt = f"Classify this resume into one of the following categories: Data Science, Software Development, HR, Design, Marketing.\n\nResume:\n{text[:4000]}"  # truncate for safety
+    prompt = f"Classify this resume into one of the following categories: Data Science, Software Development, HR, Design, Marketing.\n\nResume:\n{text[:4000]}"
 
     headers = {
         "Authorization": f"Bearer {WATSON_API_KEY}",
@@ -41,7 +41,6 @@ def classify():
     text = extract_text_from_pdf(pdf_file)
     result = classify_resume_with_ibm(text)
 
-    # Extract predicted category (basic logic – improve later)
     for category in ["Data Science", "Software Development", "HR", "Design", "Marketing"]:
         if category.lower() in result.lower():
             return jsonify({"category": category, "explanation": result})
