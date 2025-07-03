@@ -20,14 +20,15 @@ async function uploadResume() {
     });
 
     const result = await response.json();
+
     if (result.error) {
       output.innerText = "❌ Error: " + result.error;
     } else {
-      output.innerText = `✅ Predicted Category: ${result.category}\n\n📝 Details:\n${result.explanation}`;
+      output.innerText = `✅ Predicted Category: ${result.category}`;
     }
   } catch (error) {
     output.innerText = "❌ An error occurred. Please try again.";
-    console.error(error);
+    console.error("❌ Fetch error:", error);
   }
 }
 
