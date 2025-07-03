@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resume Screening Assistant</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Resume Screening Assistant</h1>
-    
-    <label class="file-label">
-      Upload Resume (PDF):
-      <input type="file" id="resume" accept="application/pdf" />
-    </label>
+  <header>
+    <h1>📄 Resume Screening Assistant</h1>
+    <button onclick="toggleMode()" id="mode-toggle">🌙 Toggle Mode</button>
+  </header>
 
-    <button onclick="uploadResume()">Classify Resume</button>
-    <button class="mode-toggle" onclick="toggleMode()">🌙 Toggle Mode</button>
+  <main>
+    <section class="upload-box">
+      <label for="resume">Upload Resume (PDF):</label>
+      <input type="file" id="resume" accept=".pdf" />
+      <button onclick="uploadResume()">📤 Classify Resume</button>
+    </section>
 
-    <div id="output"></div>
-  </div>
+    <section id="output" class="result-box">
+      <!-- Prediction result will appear here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by <strong>Viren Hooda</strong> 💼</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
