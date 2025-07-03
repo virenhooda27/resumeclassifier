@@ -29,7 +29,7 @@ def classify_resume_with_ibm(text):
     }
 
     payload = {
-        "model_id": "granite-13b-chat",  # Make sure this is correct
+        "model_id": "granite-3-2-8b-instruct",  # Make sure this is correct
         "input": prompt
     }
 
