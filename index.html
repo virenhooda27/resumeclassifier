@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Screening Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Screening Assistant</h1>
+    
+    <label class="file-label">
+      Upload Resume (PDF):
+      <input type="file" id="resume" accept="application/pdf" />
+    </label>
+
+    <button onclick="uploadResume()">Classify Resume</button>
+    <button class="mode-toggle" onclick="toggleMode()">🌙 Toggle Mode</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

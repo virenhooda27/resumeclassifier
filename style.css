@@ -1,0 +1,56 @@
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --btn: #007BFF;
+  --output-bg: #f0f0f0;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #ffffff;
+  --btn: #0d6efd;
+  --output-bg: #1e1e1e;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+input[type="file"] {
+  margin-top: 1rem;
+}
+
+button {
+  margin: 1rem 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: var(--btn);
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#output {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--output-bg);
+  border-radius: 8px;
+  white-space: pre-wrap;
+  text-align: left;
+}
