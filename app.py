@@ -9,7 +9,7 @@ CORS(app)
 
 # ✅ Your IBM Cloud credentials
 API_KEY = "ZnuezTFn5SbYDvWa7xAapDX5BA1uemjAnJQ1M6Nowxm6"
-DEPLOYMENT_URL = "https://us-south.ml.cloud.ibm.com/ml/v4/deployments/6ca60c6a-301b-459f-8c3d-7d8017f6ddbd/ai_service_stream?version=2021-05-01"
+DEPLOYMENT_URL = "https://us-south.ml.cloud.ibm.com/ml/v4/deployments/6ca60c6a-301b-459f-8c3d-7d8017f6ddbd/ai_service?version=2021-05-01"
 IAM_URL = "https://iam.cloud.ibm.com/identity/token"
 
 def get_iam_token():
