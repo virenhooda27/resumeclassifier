@@ -1,3 +1,4 @@
+from unittest import result
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import fitz  # PyMuPDF
@@ -91,7 +92,8 @@ def classify_resume():
 
         response.raise_for_status()
         result = response.json()
-        predicted = result["results"][0]["generated_text"].strip()
+        predicted = result["choices"][0]["message"]["content"].strip()
+
 
         print("✅ Prediction received:", predicted)
         return jsonify({"category": predicted})
