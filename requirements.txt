@@ -2,3 +2,4 @@ Flask
 requests
 PyMuPDF
 gunicorn
+flask-cors
